@@ -1,6 +1,6 @@
 #include "header.hpp"
 
-void bubbleSort(std::vector<int> &v) {
+void AppUtilities::bubbleSort() {
   size_t n = v.size();
 
   for(size_t k = 1; k < (n - 1); k++) {

@@ -1,6 +1,6 @@
 #include "header.hpp"
 
-void drawBar(std::vector<int>& v, sf::RenderWindow& window) {
+void AppUtilities::drawBar(sf::RenderWindow& window) {
   sf::RectangleShape bar;
   bar.setFillColor(sf::Color::White);
 

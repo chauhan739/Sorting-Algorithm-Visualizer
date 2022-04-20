@@ -1,16 +1,16 @@
-#target: dependencies
-#	command(s)
-
 CXX = g++
 CXXFLAGS = -Wall -std=c++14
 LDLIBS = -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system
 BIN = main
 
-main: main.o RandomArrayGenerator.o Bars.o BubbleSort.o SelectionSort.o
-	$(CXX) $(CXXFLAGS) main.o RandomArrayGenerator.o Bars.o BubbleSort.o SelectionSort.o $(LDLIBS) -o main
+main: main.o Constructor.o RandomArrayGenerator.o Bars.o BubbleSort.o SelectionSort.o
+	$(CXX) $(CXXFLAGS) main.o Constructor.o RandomArrayGenerator.o Bars.o BubbleSort.o SelectionSort.o $(LDLIBS) -o main
 
 main.o: main.cpp header.hpp
 	$(CXX) -c main.cpp
+
+Constructor.o: Constructor.cpp header.hpp
+	$(CXX) -c Constructor.cpp
 
 RandomArrayGenerator.o: RandomArrayGenerator.cpp header.hpp
 	$(CXX) -c RandomArrayGenerator.cpp

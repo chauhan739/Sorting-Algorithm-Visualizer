@@ -1,6 +1,6 @@
 #include "header.hpp"
 
-void generateRandomArray(std::vector<int>& v) {
+void AppUtilities::generateRandomArray() {
   for(int i = 0; i < 100; i++) v.push_back(i+1);
 
   unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();

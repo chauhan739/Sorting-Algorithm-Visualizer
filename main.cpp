@@ -1,32 +1,28 @@
 #include "header.hpp"
 
 int main() {
-  std::vector<int> arr;
-  generateRandomArray(arr);
-  
-  sf::VideoMode vm(1000, 700);
-  sf::RenderWindow window(vm, "Sorting-Algo Visualizer", sf::Style::Titlebar);
-  window.setFramerateLimit(5);
+  AppUtilities run;
+  run.generateRandomArray();
 
   bool isPressed = false;
 
-  while(window.isOpen()) {
+  while(run.window.isOpen()) {
     sf::Event event;
-    while (window.pollEvent(event)) {
-      if(event.key.code == sf::Keyboard::Escape) window.close();
+    while (run.window.pollEvent(event)) {
+      if(event.key.code == sf::Keyboard::Escape) run.window.close();
       if(event.key.code == sf::Keyboard::Enter) isPressed = true;
     }
 
     if(isPressed) {
-      // bubbleSort(arr);
-      selectionSort(arr);
+      run.bubbleSort();
+      // run.selectionSort();
     }
     
-    window.clear(sf::Color::Black);
+    run.window.clear(sf::Color::Black);
 
-    drawBar(arr, window);
+    run.drawBar(run.window);
     
-    window.display();
+    run.window.display();
   }
 
   return EXIT_SUCCESS;

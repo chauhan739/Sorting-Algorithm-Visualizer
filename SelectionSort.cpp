@@ -1,6 +1,6 @@
 #include "header.hpp"
 
-void selectionSort(std::vector<int> &v) {
+void AppUtilities::selectionSort() {
   size_t n = v.size();
 
   for(size_t i = 0; i < (n - 1); i++) {

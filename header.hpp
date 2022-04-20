@@ -5,27 +5,20 @@
 #include <chrono>
 #include <SFML/Graphics.hpp>
 
-/**
- * Generate a random array at every call.
- * Definition present in @RandomArrayGenerator.cpp
- */
-void generateRandomArray(std::vector<int> &);
+class AppUtilities {
+private:
+  std::vector<int> v;
 
-/**
- * Represent each integral number in the array as a vertical rectangular bars.
- * Definition present in @Bars.cpp
- */
-void drawBar(std::vector<int> &, sf::RenderWindow &);
+public:
+  sf::RenderWindow window;
+  
+  AppUtilities();
+  
+  void generateRandomArray();
 
-/**
- * A type of Sorting Algorithm.
- * Definition present in @BubbleSort.cpp
- */
-void bubbleSort(std::vector<int> &);
+  void drawBar(sf::RenderWindow &);
 
-/**
- * A type of Sorting Algorithm
- * Definition present in @SelectionSort.cpp
- */
-void selectionSort(std::vector<int> &);
+  void bubbleSort();
 
+  void selectionSort();
+};
