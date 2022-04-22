@@ -1,10 +1,11 @@
 CXX = g++
 CXXFLAGS = -Wall -std=c++14
 LDLIBS = -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system
-BIN = main
+BIN = main 
+OBJ = main.o Constructor.o RandomArrayGenerator.o Bars.o BubbleSort.o SelectionSort.o
 
-main: main.o Constructor.o RandomArrayGenerator.o Bars.o BubbleSort.o SelectionSort.o
-	$(CXX) $(CXXFLAGS) main.o Constructor.o RandomArrayGenerator.o Bars.o BubbleSort.o SelectionSort.o $(LDLIBS) -o main
+main: $(OBJ)
+	$(CXX) $(CXXFLAGS) $(OBJ) $(LDLIBS) -o main
 
 main.o: main.cpp header.hpp
 	$(CXX) -c main.cpp
