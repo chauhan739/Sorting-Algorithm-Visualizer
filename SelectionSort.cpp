@@ -1,6 +1,9 @@
 #include "header.hpp"
 
 void AppUtilities::selectionSort() {
+  m_title.setString("Selection Sort");
+  m_title.setPosition(0.0f, 0.0f);
+  
   size_t n = m_v.size();
 
   for(size_t i = 0; i < (n - 1); i++) {

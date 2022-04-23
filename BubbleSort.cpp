@@ -1,6 +1,8 @@
 #include "header.hpp"
 
 void AppUtilities::bubbleSort() {
+  m_title.setString("Bubble Sort");
+  m_title.setPosition(0.0f, 0.0f);
 
   size_t n = m_v.size();
 
