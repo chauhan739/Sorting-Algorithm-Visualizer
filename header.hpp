@@ -1,5 +1,4 @@
 #pragma once
-
 #include <vector>
 #include <random>
 #include <chrono>
@@ -7,16 +6,18 @@
 
 class AppUtilities {
 private:
-  std::vector<int> v;
+  std::vector<int> m_v;
+
+  sf::RenderWindow m_window;
 
 public:
-  sf::RenderWindow window;
-  
   AppUtilities();
+
+  void start();
   
   void generateRandomArray();
 
-  void drawBar(sf::RenderWindow &);
+  void drawBar();
 
   void bubbleSort();
 
