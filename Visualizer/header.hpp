@@ -10,6 +10,10 @@ private:
 
   sf::RenderWindow m_window;
 
+  sf::Font m_font;
+
+  sf::Text m_title;
+
 public:
   AppUtilities();
 

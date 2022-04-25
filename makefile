@@ -2,31 +2,31 @@ CXX = g++
 CXXFLAGS = -Wall -std=c++14
 LDLIBS = -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system
 BIN = main 
-OBJ = main.o Constructor.o RunApplication.o RandomArrayGenerator.o Bars.o BubbleSort.o SelectionSort.o
+OBJ = main.o Visualizer/Constructor.o Visualizer/RunApplication.o Visualizer/RandomArrayGenerator.o Visualizer/Bars.o Algorithms/BubbleSort.o Algorithms/SelectionSort.o
 
-main: $(OBJ)
+$(BIN): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) $(LDLIBS) -o main
 
-main.o: main.cpp header.hpp
+main.o: main.cpp Visualizer/header.hpp
 	$(CXX) -c main.cpp
 
-Constructor.o: Constructor.cpp header.hpp
+Constructor.o: Visualizer/Constructor.cpp Visualizer/header.hpp
 	$(CXX) -c Constructor.cpp
 
-RunApplication.o: RunApplication.cpp header.hpp
+RunApplication.o: Visualizer/RunApplication.cpp Visualizer/header.hpp
 	$(CXX) -c RunApplication.cpp
 
-RandomArrayGenerator.o: RandomArrayGenerator.cpp header.hpp
+RandomArrayGenerator.o: Visualizer/RandomArrayGenerator.cpp Visualizer/header.hpp
 	$(CXX) -c RandomArrayGenerator.cpp
 
-Bars.o: Bars.cpp header.hpp
+Bars.o: Visualizer/Bars.cpp Visualizer/header.hpp
 	$(CXX) -c Bars.cpp
 
-BubbleSort.o: BubbleSort.cpp header.hpp
+BubbleSort.o: Algorithms/BubbleSort.cpp Visualizer/header.hpp
 	$(CXX) -c BubbleSort.cpp
 
-SelectionSort.o: SelectionSort.cpp header.hpp
+SelectionSort.o: Algorithms/SelectionSort.cpp Visualizer/header.hpp
 	$(CXX) -c SelectionSort.cpp
 
 clean:
-	$(RM) *.o *~ $(BIN)
+	$(RM) *.o Visualizer/*.o Algorithms/*.o *~ $(BIN)

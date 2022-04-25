@@ -20,6 +20,7 @@ void AppUtilities::start() {
     m_window.clear(sf::Color::Black);
 
     AppUtilities::drawBar();
+    m_window.draw(m_title);
 
     m_window.display();
   }

@@ -1,4 +1,4 @@
-#include "header.hpp"
+#include "../Visualizer/header.hpp"
 
 void AppUtilities::bubbleSort() {
   m_title.setString("Bubble Sort");
