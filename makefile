@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -std=c++14
+CXXFLAGS = -std=c++14 -Wall -Werror -pedantic
 LDLIBS = -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system
 BIN = main 
 OBJ = main.o Visualizer/Constructor.o Visualizer/RunApplication.o Visualizer/RandomArrayGenerator.o Visualizer/Bars.o Algorithms/BubbleSort.o Algorithms/SelectionSort.o
@@ -29,4 +29,4 @@ SelectionSort.o: Algorithms/SelectionSort.cpp Visualizer/header.hpp
 	$(CXX) -c SelectionSort.cpp
 
 clean:
-	$(RM) *.o Visualizer/*.o Algorithms/*.o *~ $(BIN)
+	$(RM) $(OBJ) *~ Visualizer/*~ Algorithms/*~ $(BIN)
