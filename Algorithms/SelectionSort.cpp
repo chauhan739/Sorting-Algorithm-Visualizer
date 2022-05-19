@@ -1,8 +1,7 @@
 #include "../Visualizer/header.hpp" 
 
 void AppUtilities::selectionSort() {
-  m_title.setString("Selection Sort");
-  m_title.setPosition(0.0f, 0.0f);
+  m_currentWindow = WindowState::selectionSort;
   
   size_t n = m_v.size();
 
@@ -10,7 +9,8 @@ void AppUtilities::selectionSort() {
     size_t iMin = i;
     for(size_t j = (i + 1); j < n; j++) {
       if(m_v.at(j) < m_v.at(iMin)) iMin = j;
+      
     }
-    std::swap(m_v.at(i), m_v.at(iMin));
+    if(iMin != i) std::swap(m_v.at(i), m_v.at(iMin));
   }
 }

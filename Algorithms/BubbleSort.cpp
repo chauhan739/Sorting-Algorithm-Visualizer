@@ -1,8 +1,7 @@
 #include "../Visualizer/header.hpp"
 
 void AppUtilities::bubbleSort() {
-  m_title.setString("Bubble Sort");
-  m_title.setPosition(0.0f, 0.0f);
+  m_currentWindow = WindowState::bubbleSort;
 
   size_t n = m_v.size();
 
