@@ -10,6 +10,9 @@ AppUtilities::AppUtilities() {
   m_startingWindowTitle.setFont(m_font);
   m_startingWindowTitle.setLetterSpacing(1.3f);
 
+  m_startingWindowMenu.setFont(m_font);
+  m_startingWindowMenu.setLetterSpacing(1.3f);
+
   m_bubbleSortTitle.setFont(m_font);
   m_bubbleSortTitle.setLetterSpacing(1.3f);
 

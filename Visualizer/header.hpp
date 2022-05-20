@@ -29,6 +29,7 @@ private:
   sf::Font m_font;
 
   sf::Text m_startingWindowTitle;
+  sf::Text m_startingWindowMenu;
   sf::Text m_bubbleSortTitle;
   sf::Text m_selectionSortTitle;
 
@@ -38,7 +39,7 @@ public:
   void start();
 
   void generateTexts();
-  
+    
   void generateRandomArray();
 
   void drawBar();

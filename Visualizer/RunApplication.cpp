@@ -21,17 +21,20 @@ void AppUtilities::start() {
     switch(m_currentWindow) {
     case WindowState::titleWindow :
       m_window.draw(m_startingWindowTitle);
+      m_window.draw(m_startingWindowMenu);
       AppUtilities::titleWindow();
       break;
 
     case WindowState::bubbleSort :
       if(m_currentWindow != WindowState::bubbleSort) AppUtilities::generateRandomArray();
+      m_window.draw(m_bubbleSortTitle);
       AppUtilities::bubbleSort();
       AppUtilities::drawBar();
       break;
 
     case WindowState::selectionSort :
       if(m_currentWindow != WindowState::selectionSort) AppUtilities::generateRandomArray();
+      m_window.draw(m_selectionSortTitle);
       AppUtilities::selectionSort();
       AppUtilities::drawBar();
       break;
