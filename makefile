@@ -1,11 +1,20 @@
+# Compiler
 CXX = g++
-CXXFLAGS = -std=c++14 -Wall -pedantic
-LDLIBS = -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system
-BIN = main 
-OBJ = main.o Visualizer/Constructor.o Visualizer/RunApplication.o Visualizer/TextManager.o Visualizer/RandomArrayGenerator.o Visualizer/Bars.o Algorithms/AlgoSelecter.o Algorithms/BubbleSort.o Algorithms/SelectionSort.o
+
+# Compiler Flags
+CXXFLAGS = -Wall -g -pedantic
+
+# Linking Flags
+LDFLAGS = -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system
+
+# Executables
+BIN = main
+
+# Object Files
+OBJ = main.o Visualizer/Constructor.o Visualizer/RunApplication.o Visualizer/TextManager.o Visualizer/RandomArrayGenerator.o Visualizer/Bars.o Algorithms/AlgoSelecter.o Algorithms/BubbleSort.o Algorithms/SelectionSort.o Algorithms/InsertionSort.o
 
 $(BIN): $(OBJ)
-	$(CXX) $(CXXFLAGS) $(OBJ) $(LDLIBS) -o $(BIN)
+	$(CXX) $(CXXFLAGS) $(OBJ) $(LDFLAGS) -o $(BIN)
 
 main.o: main.cpp Visualizer/header.hpp
 	$(CXX) -c main.cpp
@@ -33,6 +42,9 @@ BubbleSort.o: Algorithms/BubbleSort.cpp Visualizer/header.hpp
 
 SelectionSort.o: Algorithms/SelectionSort.cpp Visualizer/header.hpp
 	$(CXX) -c SelectionSort.cpp
+
+InsertionSort.o: Algorithms/InsertionSort.cpp Visualizer/header.hpp
+	$(CXX) -c InsertionSort.cpp
 
 clean:
 	$(RM) $(OBJ) *~ Visualizer/*~ Algorithms/*~ $(BIN)
