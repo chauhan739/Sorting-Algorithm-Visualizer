@@ -14,6 +14,7 @@ void AppUtilities::start() {
       if(event.key.code == sf::Keyboard::Q) m_currentWindow = WindowState::titleWindow;
       if(event.key.code == sf::Keyboard::Num1) m_currentWindow = WindowState::bubbleSort;
       if(event.key.code == sf::Keyboard::Num2) m_currentWindow = WindowState::selectionSort;
+      if(event.key.code == sf::Keyboard::Num3) m_currentWindow = WindowState::insertionSort;
     }
 
     m_window.clear(sf::Color::Black);
@@ -22,37 +23,32 @@ void AppUtilities::start() {
     case WindowState::titleWindow :
       m_window.draw(m_startingWindowTitle);
       m_window.draw(m_startingWindowMenu);
-      AppUtilities::titleWindow();
       break;
 
     case WindowState::bubbleSort :
-      if(m_currentWindow != WindowState::bubbleSort) AppUtilities::generateRandomArray();
       m_window.draw(m_bubbleSortTitle);
       AppUtilities::bubbleSort();
       AppUtilities::drawBar();
       break;
 
     case WindowState::selectionSort :
-      if(m_currentWindow != WindowState::selectionSort) AppUtilities::generateRandomArray();
       m_window.draw(m_selectionSortTitle);
       AppUtilities::selectionSort();
       AppUtilities::drawBar();
       break;
 
     case WindowState::insertionSort :
-      if(m_currentWindow != WindowState::insertionSort) AppUtilities::generateRandomArray();
-      // AppUtilities::insertionSort();
+      m_window.draw(m_insertionSortTitle);
+      AppUtilities::insertionSort();
       AppUtilities::drawBar();
       break;
 
     case WindowState::mergeSort :
-      if(m_currentWindow != WindowState::mergeSort) AppUtilities::generateRandomArray();
       // AppUtilities::mergeSort();
       AppUtilities::drawBar();
       break;
 
     case WindowState::quickSort :
-      if(m_currentWindow != WindowState::quickSort) AppUtilities::generateRandomArray();
       // AppUtilities::quickSort();
       AppUtilities::drawBar();
       break;

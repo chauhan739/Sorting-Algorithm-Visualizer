@@ -32,6 +32,7 @@ private:
   sf::Text m_startingWindowMenu;
   sf::Text m_bubbleSortTitle;
   sf::Text m_selectionSortTitle;
+  sf::Text m_insertionSortTitle;
 
 public:
   AppUtilities();
@@ -44,9 +45,9 @@ public:
 
   void drawBar();
 
-  void titleWindow();
-
   void bubbleSort();
 
   void selectionSort();
+
+  void insertionSort();
 };

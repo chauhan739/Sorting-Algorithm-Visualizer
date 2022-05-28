@@ -2,7 +2,7 @@
 CXX = g++
 
 # Compiler Flags
-CXXFLAGS = -Wall -g -pedantic
+CXXFLAGS = -Wall -g
 
 # Linking Flags
 LDFLAGS = -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system
@@ -11,7 +11,7 @@ LDFLAGS = -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system
 BIN = main
 
 # Object Files
-OBJ = main.o Visualizer/Constructor.o Visualizer/RunApplication.o Visualizer/TextManager.o Visualizer/RandomArrayGenerator.o Visualizer/Bars.o Algorithms/AlgoSelecter.o Algorithms/BubbleSort.o Algorithms/SelectionSort.o Algorithms/InsertionSort.o
+OBJ = main.o Visualizer/Constructor.o Visualizer/RunApplication.o Visualizer/TextManager.o Visualizer/RandomArrayGenerator.o Visualizer/Bars.o Algorithms/BubbleSort.o Algorithms/SelectionSort.o Algorithms/InsertionSort.o
 
 $(BIN): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) $(LDFLAGS) -o $(BIN)
@@ -33,9 +33,6 @@ RandomArrayGenerator.o: Visualizer/RandomArrayGenerator.cpp Visualizer/header.hp
 
 Bars.o: Visualizer/Bars.cpp Visualizer/header.hpp
 	$(CXX) -c Bars.cpp
-
-AlgoSelecter.o: Algorithms/AlgoSelecter.cpp Visualizer/header.hpp
-	$(CXX) -c AlgoSelecter.cpp
 
 BubbleSort.o: Algorithms/BubbleSort.cpp Visualizer/header.hpp
 	$(CXX) -c BubbleSort.cpp
