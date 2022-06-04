@@ -9,31 +9,31 @@ void AppUtilities::handleWindow() {
 
   case WindowState::bubbleSort :
     m_window.draw(m_bubbleSortTitle);
-    AppUtilities::bubbleSort();
+    if(m_isArraySorted) AppUtilities::bubbleSort();
     AppUtilities::drawBar();
     break;
 
   case WindowState::selectionSort :
     m_window.draw(m_selectionSortTitle);
-    AppUtilities::selectionSort();
+    if(m_isArraySorted) AppUtilities::selectionSort();
     AppUtilities::drawBar();
     break;
 
   case WindowState::insertionSort :
     m_window.draw(m_insertionSortTitle);
-    AppUtilities::insertionSort();
+    if(m_isArraySorted) AppUtilities::insertionSort();
     AppUtilities::drawBar();
     break;
 
   case WindowState::mergeSort :
     m_window.draw(m_mergeSortTitle);
-    // AppUtilities::mergeSort();
+    // if(m_isArraySorted) AppUtilities::mergeSort();
     AppUtilities::drawBar();
     break;
 
   case WindowState::quickSort :
     m_window.draw(m_quickSortTitle);
-    // AppUtilities::quickSort();
+    // if(m_isArraySorted) AppUtilities::quickSort();
     AppUtilities::drawBar();
     break;
   }

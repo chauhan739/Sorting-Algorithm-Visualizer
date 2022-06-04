@@ -2,7 +2,6 @@
 #include <vector>
 #include <random>
 #include <chrono>
-#include <thread>
 #include <SFML/Graphics.hpp>
 
 enum WindowState {
@@ -22,6 +21,8 @@ enum WindowState {
 class AppUtilities {
 private:
   std::vector<int> m_v;
+
+  bool m_isArraySorted;
 
   sf::RenderWindow m_window;
 

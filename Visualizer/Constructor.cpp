@@ -27,4 +27,6 @@ AppUtilities::AppUtilities() {
 
   m_quickSortTitle.setFont(m_font);
   m_quickSortTitle.setLetterSpacing(1.3f);
+
+  m_isArraySorted = false;
 }
