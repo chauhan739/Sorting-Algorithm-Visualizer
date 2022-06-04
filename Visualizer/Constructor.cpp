@@ -18,4 +18,13 @@ AppUtilities::AppUtilities() {
 
   m_selectionSortTitle.setFont(m_font);
   m_selectionSortTitle.setLetterSpacing(1.3f);
+
+  m_insertionSortTitle.setFont(m_font);
+  m_insertionSortTitle.setLetterSpacing(1.3f);
+
+  m_mergeSortTitle.setFont(m_font);
+  m_mergeSortTitle.setLetterSpacing(1.3f);
+
+  m_quickSortTitle.setFont(m_font);
+  m_quickSortTitle.setLetterSpacing(1.3f);
 }

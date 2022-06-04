@@ -2,6 +2,7 @@
 #include <vector>
 #include <random>
 #include <chrono>
+#include <thread>
 #include <SFML/Graphics.hpp>
 
 enum WindowState {
@@ -33,6 +34,8 @@ private:
   sf::Text m_bubbleSortTitle;
   sf::Text m_selectionSortTitle;
   sf::Text m_insertionSortTitle;
+  sf::Text m_mergeSortTitle;
+  sf::Text m_quickSortTitle;
 
 public:
   AppUtilities();
@@ -44,6 +47,10 @@ public:
   void generateRandomArray();
 
   void drawBar();
+
+  void handleEvent();
+
+  void handleWindow();
 
   void bubbleSort();
 

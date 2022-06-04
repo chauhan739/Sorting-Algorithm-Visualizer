@@ -11,7 +11,7 @@ LDFLAGS = -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system
 BIN = main
 
 # Object Files
-OBJ = main.o Visualizer/Constructor.o Visualizer/RunApplication.o Visualizer/TextManager.o Visualizer/RandomArrayGenerator.o Visualizer/Bars.o Algorithms/BubbleSort.o Algorithms/SelectionSort.o Algorithms/InsertionSort.o
+OBJ = main.o Visualizer/Constructor.o Visualizer/RunApplication.o Visualizer/TextManager.o Visualizer/RandomArrayGenerator.o Visualizer/Bars.o Visualizer/EventHandler.o Visualizer/WindowHandler.o Algorithms/BubbleSort.o Algorithms/SelectionSort.o Algorithms/InsertionSort.o
 
 $(BIN): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) $(LDFLAGS) -o $(BIN)
@@ -33,6 +33,12 @@ RandomArrayGenerator.o: Visualizer/RandomArrayGenerator.cpp Visualizer/header.hp
 
 Bars.o: Visualizer/Bars.cpp Visualizer/header.hpp
 	$(CXX) -c Bars.cpp
+
+EventHandler.o: Visualizer/EventHandler.cpp Visualizer/header.hpp
+	$(CXX) -c EventHandler.cpp
+
+WindowHandler.o: Visualizer/WindowHandler.cpp Visualizer/header.hpp
+	$(CXX) -c WindowHandler.cpp
 
 BubbleSort.o: Algorithms/BubbleSort.cpp Visualizer/header.hpp
 	$(CXX) -c BubbleSort.cpp

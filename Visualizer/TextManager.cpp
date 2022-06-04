@@ -21,4 +21,16 @@ void AppUtilities::generateTexts() {
   m_selectionSortTitle.setString("Selection Sort");
   m_selectionSortTitle.setPosition(0.0f, 0.0f);
   m_selectionSortTitle.setFillColor(sf::Color(50, 205, 50));
+
+  m_insertionSortTitle.setString("Insertion Sort");
+  m_insertionSortTitle.setPosition(0.0f, 0.0f);
+  m_insertionSortTitle.setFillColor(sf::Color(50, 205, 50));
+
+  m_mergeSortTitle.setString("Merge Sort");
+  m_mergeSortTitle.setPosition(0.0f, 0.0f);
+  m_mergeSortTitle.setFillColor(sf::Color(50, 205, 50));
+
+  m_quickSortTitle.setString("Quick Sort");
+  m_quickSortTitle.setPosition(0.0f, 0.0f);
+  m_quickSortTitle.setFillColor(sf::Color(50, 205, 50));
 }
