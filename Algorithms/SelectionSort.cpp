@@ -8,6 +8,9 @@ void AppUtilities::selectionSort() {
     for(size_t j = (i + 1); j < n; j++) {
       if(m_v.at(j) < m_v.at(iMin)) iMin = j;
     }
-    if(iMin != i) std::swap(m_v.at(i), m_v.at(iMin));
+    if(iMin != i) {
+      std::swap(m_v.at(i), m_v.at(iMin));
+      break;
+    }
   }
 }
