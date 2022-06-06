@@ -8,6 +8,7 @@ void AppUtilities::insertionSort() {
     while(cmpInd >= 0 && m_v.at(cmpInd) > val) {
       m_v.at(cmpInd + 1) = m_v.at(cmpInd);
       cmpInd--;
+      break;
     }
     m_v.at(cmpInd + 1) = val;
   }
