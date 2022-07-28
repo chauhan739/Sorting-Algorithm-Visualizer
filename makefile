@@ -8,27 +8,39 @@ CXXFLAGS = -Wall -g
 LDFLAGS = -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system
 
 # Executables
-BIN = main
+BIN := main
 
 # Header File
 HDR = Visualizer/header.hpp
 
-# Object Files
-OBJ = ./*.o Algorithms/*.o Visualizer/*.o
+# Source Files
+# VPATH = ./:./Algorithms/:./Visualizer/
+SRCS := $(wildcard Algorithms/*.cpp) $(wildcard Visualizer/*.cpp)
 
-$(BIN): $(OBJ)
+OBJS := $(SRCS:.cpp=.o)
+
+all: build $(BIN) transfer
+
+$(BIN): main.o $(OBJS)
 	$(CXX) $(CXXFLAGS) $^ $(LDFLAGS) -o $@
 
-main.o: main.cpp $(HEDR_FILE)
+main.o: main.cpp $(HDR)
 	$(CXX) -c $<
 
-Algorithms/%.o: Algorithms/%.cpp $(HDR)
-	$(CXX) -c $<
+OBJS += main.o
 
-Visualizer/%.o: Visualizer/%.cpp $(HDR)
-	$(CXX) -c $<
+build:
+	$(MAKE) -C Algorithms/
+	$(MAKE) -C Visualizer/
 
-.PHONY: clean
+transfer:
+	mkdir -p Binaries/
+	mv $(OBJS) $(BIN) Binaries/
+
+.PHONY: run clean
+
+run:
+	./Binaries/main
 
 clean:
-	$(RM) $(OBJ) *~ Visualizer/*~ Algorithms/*~ $(BIN)
+	$(RM) -r Binaries/
