@@ -4,16 +4,16 @@ Visualize all basic type of sorting algorithms. Developed in C++/SFML
 Developed on Debian based Linux Distro. Therefore, command provided below will run only on (Debian based distros)[https://en.wikipedia.org/wiki/Category:Debian-based_distributions].
 
 ## Algorithms Covered
-[x] (Bubble Sort)[https://www.youtube.com/watch?v=Jdtq5uKz-w4]
-[x] (Selection Sort)[https://www.youtube.com/watch?v=GUDLRan2DWM]
-[x] (Insertion Sort)[https://www.youtube.com/watch?v=i-SKeOcBwko]
-[] (Merge Sort)[https://www.youtube.com/watch?v=TzeBrDU-JaY]
-[] (Quick Sort)[https://www.youtube.com/watch?v=COk73cpQbFQ]
+- [x] [Bubble Sort](https://www.youtube.com/watch?v=Jdtq5uKz-w4)
+- [x] [Selection Sort](https://www.youtube.com/watch?v=GUDLRan2DWM)
+- [x] [Insertion Sort](https://www.youtube.com/watch?v=i-SKeOcBwko)
+- [ ] [Merge Sort](https://www.youtube.com/watch?v=TzeBrDU-JaY)
+- [ ] [Quick Sort](https://www.youtube.com/watch?v=COk73cpQbFQ)
 
 ## Packages/Application required
-[x] g++
-[x] libsfml-dev
-[x] make
+- [x] g++
+- [x] libsfml-dev
+- [x] make
 
 ## Installation
 For updating and upgrading pre-installed packages
@@ -40,4 +40,4 @@ For **running** the executable, run `make run` command in the parent directory o
 For **deleting** all the binary files, run `make` command in the parent directory of this project (where this `README.md` resides).
 
 ## PR
-The project is under development. Any ideas/suggestion is very much appreciated.
+The project is under development. Any ideas/suggestion is very much appreciated. For major changes, please open issue first.
