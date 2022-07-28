@@ -1,7 +1,7 @@
 # Sorting-Algorithm-Visualizer
 Visualize all basic type of sorting algorithms. Developed in C++/SFML
 
-Developed on Debian based Linux Distro. Therefore, command provided below will run only on (Debian based distros)[https://en.wikipedia.org/wiki/Category:Debian-based_distributions].
+Developed on Debian based Linux Distro. Therefore, command provided below will run only on [Debian based distros](https://en.wikipedia.org/wiki/Category:Debian-based_distributions).
 
 ## Algorithms Covered
 - [x] [Bubble Sort](https://www.youtube.com/watch?v=Jdtq5uKz-w4)
