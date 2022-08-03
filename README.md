@@ -1,6 +1,8 @@
 # Sorting-Algorithm-Visualizer
 Visualize all basic type of sorting algorithms. Developed in C++/SFML
 
+![Sorting algorithm Visualizer Preview](https://github.com/chauhan739/Aryan/blob/master/Sorting-Algorithm-Visualizer/Visualizer-preview.gif)
+
 Developed on Debian based Linux Distro. Therefore, command provided below will run only on [Debian based distros](https://en.wikipedia.org/wiki/Category:Debian-based_distributions).
 
 ## Algorithms Covered
