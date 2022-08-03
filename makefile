@@ -1,6 +1,9 @@
 # Compiler
 CXX = g++
 
+# Make Flags
+MAKE = make --no-print-directory
+
 # Compiler Flags
 CXXFLAGS = -Wall -g
 
@@ -14,33 +17,39 @@ BIN := main
 HDR = Visualizer/header.hpp
 
 # Source Files
-# VPATH = ./:./Algorithms/:./Visualizer/
 SRCS := $(wildcard Algorithms/*.cpp) $(wildcard Visualizer/*.cpp)
 
+# Object Files
 OBJS := $(SRCS:.cpp=.o)
+OBJS += main.o
 
 all: build $(BIN) transfer
 
-$(BIN): main.o $(OBJS)
-	$(CXX) $(CXXFLAGS) $^ $(LDFLAGS) -o $@
+$(BIN): $(OBJS)
+	@$(CXX) $(CXXFLAGS) $^ $(LDFLAGS) -o $@
+	@echo Executable file generated successfully
+
+build: main.o
+	@echo Building Binaries...
+	@$(MAKE) -C Algorithms/
+	@$(MAKE) -C Visualizer/
+	@echo Binaries generated successfully
 
 main.o: main.cpp $(HDR)
-	$(CXX) -c $<
-
-OBJS += main.o
-
-build:
-	$(MAKE) -C Algorithms/
-	$(MAKE) -C Visualizer/
+	@$(CXX) -c $<
 
 transfer:
-	mkdir -p Binaries/
-	mv $(OBJS) $(BIN) Binaries/
+	@mkdir -p Binaries/
+	@mv $(OBJS) $(BIN) Binaries/
+	@echo Binary files transferred to $(shell pwd)/Binaries
 
 .PHONY: run clean
 
 run:
-	./Binaries/main
+	@echo Running Executable...
+	@./Binaries/main
 
 clean:
-	$(RM) -r Binaries/
+	@echo Cleaning Binaries...
+	@$(RM) -r Binaries/
+	@echo Done

@@ -7,9 +7,6 @@ CXXFLAGS = -Wall -g
 # Linking Flags
 LDFLAGS = -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system
 
-# Executables
-BIN = main
-
 # Header File
 HDR = ../Visualizer/header.hpp
 
